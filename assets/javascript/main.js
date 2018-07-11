@@ -22,7 +22,7 @@ function getNutrition() {
     // Request object.
     var xhr = new XMLHttpRequest();
     // Initialize/Reinitialize existing 'GET' request to the API.
-    xhr.open('GET', "", true);
+    xhr.open('GET', 'https://api.edamam.com/api/food-database/parser?ingr=white%20corn&app_id=9e4c6c3d&app_key=8954976b9cc76c3cf1396f60f23e75ab', true);
     // Make requests with cookies/credentials
     xhr.withCredentials = true;
     // When request is complete logs the response.

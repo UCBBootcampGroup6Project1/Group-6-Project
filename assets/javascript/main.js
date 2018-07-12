@@ -65,5 +65,5 @@ function getNutrition() {
     });
     
     $(document).on('click', '.ingredButtons', alertinput);
-        renderButtons();
+        renderButtons(); 
     });

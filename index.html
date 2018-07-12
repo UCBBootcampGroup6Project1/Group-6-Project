@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <title>In Your Kitchen</title>
     <!-- Links Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Gilda+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Muli" rel="stylesheet">
     <!-- Links css file -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Link bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 
 <body>
 
     <div class="container">
-        <div class="jumbotron jumbotron-fluid" id="page-title">
+        <div class="jumbotron jumbotron-fluid" id="title-jumbo">
             <div class="title-container">
                 <h1 id='PgTitle'>
                     Recipe Searcher 
                     <!-- <img class='green-thumb' src='assets/images/greenthumb.jpg' alt='Green Thumb'> -->
                 </h1>
-                <h2 id='PgSubtitle'>...</h2>
+                <h2 id='PgSubtitle'>What do you have in your kitchen?</h2>
                 
             </div>
         </div>  
@@ -33,7 +33,7 @@
 
                 <div class="col-sm-6">
                     <div class="title-container">
-                            <div class="card" style="width: 30rem; margin-left: 40px;">
+                            <div class="card" style="width: 30rem; margin-left: 40px;" id="site-cards">
                                     <form id='select-form'>
                                             <div class="form-group">
                                                 <label for="site-info" id='site-info-lbl'>Please add all of your groceries that you already have in your kitchen and we will provide you with a list of recipes so you will not have to leave the house. </label>
@@ -45,7 +45,7 @@
                                                 <br>
                                                 <button type="submit" class="btn btn-primary" id='add-ingredients-btn'>Add</button>
                         
-                                                <div id='ingredients-btn'></div>
+                                                <div id='ingredients-btn'></div> 
                         
                                             </div>
                                             
@@ -59,7 +59,7 @@
 
                 <div class="col-sm-6">
                     <div class="title-container">
-                            <div class="card" style="width: 30rem; margin-right: 40px;">
+                            <div class="card" style="width: 30rem; margin-right: 40px;" id="site-cards">
                                     <!-- <img class="card-img-top icon-img" src="assets/images/lifecycle.jpg" alt="Card image cap"> -->
                                     <div class="card-body">
                                     <p class="card-text">Click one of the ingredients to see its nutritional facts</p>
@@ -77,12 +77,12 @@
         <br>
     
         <div class="container" id="output-info">
-            <div class="jumbotron jumbotron-fluid" id="page-title">
+            <div class="jumbotron jumbotron-fluid" id="recipe-display">
                 <div class="row">
 
                     <div class="col-sm-6">
                         <div class="title-container">
-                                <div class="card" style="width: 30rem; margin-left: 40px;">
+                                <div class="card" style="width: 30rem; margin-left: 40px;" id="site-cards">
                                         <!-- <img class="card-img-top icon-img" src="assets/images/WAmount.jpg" alt="Card image cap"> -->
                                         <div class="card-body">
                                         <p class="card-text">Recipes</p>
@@ -95,7 +95,7 @@
 
                     <div class="col-sm-6">
                         <div class="title-container">
-                                <div class="card" style="width: 30rem; margin-right: 40px;">
+                                <div class="card" style="width: 30rem; margin-right: 40px;" id="site-cards">
                                         <!-- <img class="card-img-top icon-img" src="assets/images/lifecycle.jpg" alt="Card image cap"> -->
                                         <div class="card-body">
                                         <p class="card-text">Click one of the recipes to see its nutritional facts</p>

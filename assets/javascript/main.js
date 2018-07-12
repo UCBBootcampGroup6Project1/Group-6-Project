@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 // Makes a 'GET' request to the API and returns data through an XMLHttpRequest
 function searchRecipe(){
 
@@ -14,7 +16,7 @@ function searchRecipe(){
     };
     // Sends the request.
     xhr.send();
-}
+};
 
 // Makes a 'GET' request to the API and returns data through an XMLHttpRequest.
 function getNutrition() {
@@ -31,28 +33,29 @@ function getNutrition() {
     };
     // Send request.
     xhr.send();
-}
+};
 
-$(document).ready(function() {
+
+    var ingredients = [];
 
     function alertinput () {
-    var groceries = $(this).attr('ingred-list');
-        console.log(groceries);
+        var groceries = $(this).attr('ingred-list');
+            console.log(groceries);
     };
     
-    var ingredients = ['bread', 'peanut butter', 'jam'];
 
-        function renderButtons() {
-            $('#ingredients-btn').empty();
+    function renderButtons() {
+        $('#ingredients-btn').empty();
 
-            for (var i = 0; i < ingredients.length; i++) {
-                var newBtn = $('<button>');
-                newBtn.addClass('ingredButtons');
-                newBtn.attr('ingred-list', ingredients[i]);
-                newBtn.text(ingredients[i]);
-                $('#ingredients-btn').append(newBtn);
-            };
+        for (var i = 0; i < ingredients.length; i++) {
+            var newBtn = $('<button>');
+            newBtn.addClass('ingredButtons');
+            newBtn.attr('ingred-list', ingredients[i]);
+            newBtn.text(ingredients[i]);
+            $('#ingredients-btn').append(newBtn);
         };
+        $('#ingredients-input').val('');
+    };
     
     $('#add-ingredients-btn').on('click', function(event){
         event.preventDefault();
@@ -62,5 +65,5 @@ $(document).ready(function() {
     });
     
     $(document).on('click', '.ingredButtons', alertinput);
-        renderButtons();
+        renderButtons(); 
     });

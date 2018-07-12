@@ -5,44 +5,77 @@ body {
     }
 
 
+#title-jumbo {
+    background-color:#EEE2DC;
+    opacity: 0.95;
+    font: white;
 
-.jumbotron {
-    /* background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;   */
-
-    opacity: 0.80;
 }
 
-#PgTitle, #PgSubtitle {
-    color: black;
-    font-family: 'Vollkorn', serif;
+#ingredient-info {
+    background-color: #EEE2DC;
+    opacity: 0.95;
+}
+
+#PgTitle {
+    color: #123C69;
+    font-family: 'Muli', sans-serif;
     text-align: center;
+    font-weight: bold;
+}
+
+#PgSubtitle {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    color: #AC3B61;
 }
 
 
 #submitbtn {
     color: white;
     font-size: 20px;
-    font-family: 'Vollkorn', serif;
-    /* text-shadow: black; */
-}
-
-.card-text{
-    font-family: 'Vollkorn', serif;
-    color: black;
+    font-family: 'Muli', sans-serif;
+    background-color: #123C69;
+    
 }
 
 .icon-img  {
     width: 100px;
     height: 100px;
-    opacity: 0.80;
+    opacity: 0.95;
 }
 
 .card {
-    width: 100%;
+    width: 100%;  
 }
 
 .ingredButtons {
-    background-color: teal;
+    background-color: #AC3B61;
+    opacity: 1;
+    margin-right: 15px;
+    color: white;
+    font-family: 'Muli', sans-serif;
+    margin-bottom: 10px;
+}
+
+#select-form, #site-cards {
+    opacity: 1;
+    background-color: white;
+    padding: 20px;
+
+}
+
+#ingredients-lbl {
+    font-weight: bold;
+}
+
+#add-ingredients-btn {
+    margin-bottom: 20px;
+    background-color: #123C69;
+    font-family: 'Muli', sans-serif;
+}
+
+#recipe-display {
+    background-color: #EEE2DC;
 }

@@ -19,8 +19,14 @@ $('#recipe-button').on('click', function (event) {
         xhr.withCredentials = true;
         // .onload triggers when request is complete.
         xhr.onload = function () {
+            var response = JSON.parse(xhr.response);
             // Logs response to console in json format.
-            console.log(xhr.responseText);
+            console.log(response);
+            response.hits.forEach(function(hit){
+                var newDiv = document.createElement("div");
+                newDiv.innerHTML = hit.recipe.image;
+                document.body.appendChild(newDiv);
+            });
         };
         // Sends the request.
         xhr.send();
@@ -51,7 +57,9 @@ $('#nutrition-button').on('click', function (event) {
         xhr.withCredentials = true;
         // When request is complete logs the response.
         xhr.onload = function () {
-            console.log(xhr.responseText);
+            var response = JSON.parse(xhr.response);
+            console.log(JSON.parse(xhr.response));
+            console.log('food uri', response.hints[0].food.uri);
         };
         // Send request.
         xhr.send();

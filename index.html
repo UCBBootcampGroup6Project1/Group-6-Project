@@ -43,13 +43,10 @@
                                                 <input type="ingredients" class="form-control" id="ingredients-input" value='' aria-describedby="ingredients" placeholder="bread, peanut butter, jam">
 
                                                 <br>
-                                                <button type="submit" class="btn btn-primary" id='add-ingredients-btn'>Add</button>
-                        
-                                                <div id='ingredients-btn'></div> 
                         
                                             </div>
                                             
-                                            <button type="submit" class="btn btn-primary" id='submitbtn'>Submit</button>
+                                            <button type="submit" class="btn btn-primary" id='recipe-button'>Submit</button>
                                             
                                     </form>
                             </div>
@@ -75,40 +72,49 @@
     </div>
     
         <br>
-    
-        <div class="container" id="output-info">
-            <div class="jumbotron jumbotron-fluid" id="recipe-display">
-                <div class="row">
 
-                    <div class="col-sm-6">
-                        <div class="title-container">
-                                <div class="card" style="width: 30rem; margin-left: 40px;" id="site-cards">
-                                        <!-- <img class="card-img-top icon-img" src="assets/images/WAmount.jpg" alt="Card image cap"> -->
-                                        <div class="card-body">
-                                        <p class="card-text">Recipes</p>
-                                        <div class='recipe-results'></div>
-                                        </div>
-                                </div>
-                            
-                        </div>
+    <div class="container" id="output-info">
+        <div class="jumbotron jumbotron-fluid" id="nutrition-info">
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="title-container">
+                            <div class="card" style="width: 30rem; margin-left: 40px;" id="site-cards">
+                                    <form id='select-form'>
+                                            <div class="form-group">
+                                                <label for="site-info" id='site-info-lbl'>Choose an ingredient to get the nutrition info on.</label>
+                                                
+                                                <label for="nutrition" id='nutrition-lbl'>Nutrition: </label>
+
+                                                <input type="nutrition" class="form-control" id="nutrition-input" value='' aria-describedby="nutrition" placeholder="">
+
+                                                <br>
+
+                                            </div>
+                                            
+                                            <button type="submit" class="btn btn-primary" id='nutrition-button'>Submit</button>
+                                            
+                                    </form>
+                            </div>
+                        
                     </div>
-
-                    <div class="col-sm-6">
-                        <div class="title-container">
-                                <div class="card" style="width: 30rem; margin-right: 40px;" id="site-cards">
-                                        <!-- <img class="card-img-top icon-img" src="assets/images/lifecycle.jpg" alt="Card image cap"> -->
-                                        <div class="card-body">
-                                        <p class="card-text">Click one of the recipes to see its nutritional facts</p>
-                                        <div class="recipes" id='recipe-nutri-facts'></div>
-                                        </div>
-                                </div>
-                            
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="col-sm-6">
+                    <div class="title-container">
+                            <div class="card" style="width: 30rem; margin-right: 40px;" id="site-cards">
+                                    <!-- <img class="card-img-top icon-img" src="assets/images/lifecycle.jpg" alt="Card image cap"> -->
+                                    <div class="card-body">
+                                            <!-- Display nutrition info-->
+                                    </div>
+                            </div>
+                        
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

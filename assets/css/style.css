@@ -17,7 +17,7 @@ body {
     opacity: 0.95;
 }
 
-#PgTitle {
+.page-title {
     color: #123C69;
     font-family: 'Muli', sans-serif;
     text-align: center;
@@ -31,6 +31,9 @@ body {
     color: #AC3B61;
 }
 
+#display-recipe {
+    overflow: scroll;
+}
 
 #submitbtn {
     color: white;
@@ -59,7 +62,7 @@ body {
     margin-bottom: 10px;
 }
 
-#select-form, #site-cards {
+.select-form, .site-cards {
     opacity: 1;
     background-color: white;
     padding: 20px;

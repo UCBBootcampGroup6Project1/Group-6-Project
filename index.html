@@ -17,7 +17,7 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid" id="title-jumbo">
             <div class="title-container">
-                <h1 id='PgTitle'>
+                <h1 class='page-title'>
                     Recipe Searcher 
                     <!-- <img class='green-thumb' src='assets/images/greenthumb.jpg' alt='Green Thumb'> -->
                 </h1>
@@ -33,8 +33,8 @@
 
                 <div class="col-sm-6">
                     <div class="title-container">
-                            <div class="card" style="width: 30rem; margin-left: 40px;" id="site-cards">
-                                    <form id='select-form'>
+                            <div class="card" style="width: 30rem; margin-left: 40px; height: 16.75em; max-height: 16.75em;" class="site-cards">
+                                    <form class="select-form">
                                             <div class="form-group">
                                                 <label for="site-info" id='site-info-lbl'>Please add all of your groceries that you already have in your kitchen and we will provide you with a list of recipes so you will not have to leave the house. </label>
                                                 
@@ -56,9 +56,9 @@
 
                 <div class="col-sm-6">
                     <div class="title-container">
-                            <div class="card" style="width: 30rem; margin-right: 40px;" id="site-cards">
+                            <div class="card site-cards" style="width: 30rem; margin-right: 40px; height: 16.75em; max-height: 16.75em;">
                                     <!-- <img class="card-img-top icon-img" src="assets/images/lifecycle.jpg" alt="Card image cap"> -->
-                                    <div class="card-body">
+                                    <div id="display-recipe" class="card-body">
                                     <p class="card-text">Click one of the ingredients to see its nutritional facts</p>
                                     <div class="recipes" id='ingredients-nutri-facts'></div>
                                     </div>
@@ -79,12 +79,10 @@
 
                 <div class="col-sm-6">
                     <div class="title-container">
-                            <div class="card" style="width: 30rem; margin-left: 40px;" id="site-cards">
-                                    <form id='select-form'>
+                            <div class="card" style="width: 30rem; margin-left: 40px;" class="site-cards">
+                                    <form class="select-form">
                                             <div class="form-group">
                                                 <label for="site-info" id='site-info-lbl'>Choose an ingredient to get the nutrition info on.</label>
-                                                
-                                                <label for="nutrition" id='nutrition-lbl'>Nutrition: </label>
 
                                                 <input type="nutrition" class="form-control" id="nutrition-input" value='' aria-describedby="nutrition" placeholder="">
 
@@ -102,10 +100,11 @@
 
                 <div class="col-sm-6">
                     <div class="title-container">
-                            <div class="card" style="width: 30rem; margin-right: 40px;" id="site-cards">
+                            <div class="card" style="width: 30rem; margin-right: 40px;" class="site-cards">
                                     <!-- <img class="card-img-top icon-img" src="assets/images/lifecycle.jpg" alt="Card image cap"> -->
                                     <div class="card-body">
                                             <!-- Display nutrition info-->
+                                            <div id="display-nutrition"></div>
                                     </div>
                             </div>
                         

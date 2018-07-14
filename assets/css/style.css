@@ -4,6 +4,17 @@ body {
     background-size: cover;  
     }
 
+    #display-recipe a {
+        color: #000000;
+        text-decoration: none;
+    }
+    
+    #display-recipe a:hover 
+    {
+         color:#999696; 
+         text-decoration:none; 
+         cursor:pointer;  
+    }
 
 #title-jumbo {
     background-color:#EEE2DC;

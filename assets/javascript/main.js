@@ -41,7 +41,7 @@ $('#recipe-button').on('click', function (event) {
         // Check for valid input. (400, 404)
         xhr.onreadystatechange = function() {
             // If complete.
-            if (xhr.readState === 4) {
+            if (xhr.readyState === 4) {
                 // If 'OK'.
                 if(xhr.status === 200) {
                     console.log('success');
@@ -106,7 +106,7 @@ $('#nutrition-button').on('click', function (event) {
         // If complete.
         if (xhr.readyState === 4) {
             // Check if 'OK'
-            if (xhr.readyState === 200) {
+            if (xhr.status === 200) {
                 console.log('Successful API call.');
             } 
             else {

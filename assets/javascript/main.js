@@ -28,22 +28,26 @@ $('#recipe-button').on('click', function (event) {
     const ingrInput = $('#ingredients-input').val().trim();
 
     // API url for making 'GET' request to find recipes.
-    const recipeUrl = "https://api.edamam.com/search?q=" + ingrInput + "&app_id=7919900d&app_key=47fe0acea0eb3f17386dadb3b722e233";
-
+    const recipeUrl = "https://api.edamam.com/search?q=" + ingrInput + "&app_id=44446b38&app_key=d47398d9c6d64bae4a20858ee13beadc";
     // Makes a 'GET' request to the API and returns data through an XMLHttpRequest
     function searchRecipe(){
-
         // Request object.
         const xhr = new XMLHttpRequest();
+        //
+        console.log('UNSENT', xhr.status);
         // Initialize/reinitialize existing 'GET' request to the API.
         xhr.open('GET', recipeUrl, true);
+        //
+        console.log('OPENED', xhr.status);
         // .withCredentials takes a boolean. Indicates that 'cross-site' requests should be made with credentials/cookies.
         xhr.withCredentials = true;
         // .onload triggers when request is complete.
         xhr.onload = function () {
+            console.log('DONE', xhr.status);
             var response = JSON.parse(xhr.response);
             // Logs response to console in json format.
             console.log(response);
+
             // Loop through the response hits(like-array).
             response.hits.forEach(function(hit) {
                 // Create div inside itemBox variable.
@@ -58,16 +62,12 @@ $('#recipe-button').on('click', function (event) {
                 // Append '.recipe-container' to '.display-recipe' div.
                 document.getElementById('display-recipe').appendChild(itemBox);
             });
-           /* response.hits.forEach(function(hit) {
-                var recipeImg = document.createElement('img');
-                recipeImg.setAttribute('class', 'recipe-item');
-                recipeImg.src = hit.recipe.img;
-                document.getElementsByClassname('recipe-container').appendChild(recipeImg);
-            })*/
         };
+
         // Sends the request.
         xhr.send();
     };
+
     // Calls the searchRecipe() function.
     searchRecipe();
 });
@@ -80,11 +80,10 @@ $('#nutrition-button').on('click', function (event) {
     const nutrInput = $('#nutrition-input').val().trim();
     
     // API url for making 'GET' request for nutrition values.
-    const nutrUrl = "https://api.edamam.com/api/food-database/parser?ingr=" + nutrInput + "&app_id=9e4c6c3d&app_key=8954976b9cc76c3cf1396f60f23e75ab";
+    const nutrUrl = "https://api.edamam.com/api/food-database/parser?ingr=" + nutrInput + "&app_id=181aca72&app_key=b7256710e96ed6771ca1936c304b7c88";
 
     // Makes a 'GET' request to the API and returns data through an XMLHttpRequest.
     function getNutrition() {
-
         // Request object.
         const xhr = new XMLHttpRequest();
         // Initialize/Reinitialize existing 'GET' request to the API.
@@ -92,24 +91,24 @@ $('#nutrition-button').on('click', function (event) {
         // Make requests with cookies/credentials
         xhr.withCredentials = true;
         // When request is complete logs the response.
-        
         xhr.onload = function () {
-            if(xhr.status === 400 || xhr.status === 404) {
-                alert('Choose a food item.');
-            }
             var response = JSON.parse(xhr.response);
             console.log(response.hints[0].food.nutrients);
-            //var newDiv = document.createElement("div");
-            //newDiv.innerHTML = response.hints[0].food.nutrients;
-            document.getElementById('display-nutrition').innerHTML = 'Calories: ' + response.hints[0].food.nutrients.ENERC_KCAL + '<br>' +
-                'Protein: ' + response.hints[0].food.nutrients.PROCNT + 'g' + '<br>' +
-                'Fat: ' + response.hints[0].food.nutrients.FAT + 'g' + '<br>' +
-                'Carbs: ' + response.hints[0].food.nutrients.CHOCDF + '%';
+            
+            var protein = response.hints[0].food.nutrients.PROCNT;
+            var calories = response.hints[0].food.nutrients.ENERC_KCAL;
+            var fat = response.hints[0].food.nutrients.FAT;
+            var carbs = response.hints[0].food.nutrients.CHOCDF;
+
+            document.getElementById('display-nutrition').innerHTML = 'Calories: ' + calories.toFixed(2) + '<br>' +
+                'Protein: ' + protein.toFixed(2) + 'g' + '<br>' +
+                'Fat: ' + fat.toFixed(2) + 'g' + '<br>' +
+                'Carbs: ' + carbs.toFixed(2) + '%';
 
         };
         // Send request.
         xhr.send();
-    };
+}
     getNutrition();
 });
 

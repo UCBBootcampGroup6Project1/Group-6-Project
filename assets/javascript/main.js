@@ -6,7 +6,7 @@ function createImg(src) {
         element.src = src;
 
         return element;
-};
+}
 
 // Create <a> element inside .recipe-container with link to the recipe.
 function createLabel(label, link) {
@@ -18,7 +18,7 @@ function createLabel(label, link) {
         element.setAttribute('href', link);
 
         return element;
-};
+}
 
 // Click event handler for recipe-button.
 $('#recipe-button').on('click', function (event) {
@@ -28,7 +28,7 @@ $('#recipe-button').on('click', function (event) {
     const ingrInput = $('#ingredients-input').val().trim();
     if (ingrInput == '') {
         swal('Please input at least one food item.');
-    };
+    }
 
     // API url for making 'GET' request to find recipes.
     const recipeUrl = "https://api.edamam.com/search?q=" + ingrInput + "&app_id=44446b38&app_key=d47398d9c6d64bae4a20858ee13beadc";
@@ -38,20 +38,21 @@ $('#recipe-button').on('click', function (event) {
         document.getElementById('display-recipe').innerHTML = '';
         // Request object.
         const xhr = new XMLHttpRequest();
+        // Check for valid input. (400, 404)
         xhr.onreadystatechange = function() {
+            // If complete.
             if (xhr.readState === 4) {
+                // If 'OK'.
                 if(xhr.status === 200) {
-                    swal('success');
+                    console.log('success');
                 } else {
                     swal('Invalid input');
                 }
             }
         }
-        console.log('UNSENT', xhr.status);
+
         // Initialize/reinitialize existing 'GET' request to the API.
         xhr.open('GET', recipeUrl, true);
-        //
-        console.log('OPENED', xhr.status);
         // .withCredentials takes a boolean. Indicates that 'cross-site' requests should be made with credentials/cookies.
         xhr.withCredentials = true;
         // .onload triggers when request is complete.
@@ -75,11 +76,11 @@ $('#recipe-button').on('click', function (event) {
                 // Append '.recipe-container' to '.display-recipe' div.
                 document.getElementById('display-recipe').appendChild(itemBox);
             });
-        };
+        }
 
         // Sends the request.
         xhr.send();
-    };
+    }
 
     // Calls the searchRecipe() function.
     searchRecipe();
@@ -102,7 +103,9 @@ $('#nutrition-button').on('click', function (event) {
         
         // Check for bad request.
         xhr.onreadystatechange = function() {
+        // If complete.
         if (xhr.readyState === 4) {
+            // Check if 'OK'
             if (xhr.readyState === 200) {
                 console.log('Successful API call.');
             } 
@@ -131,7 +134,7 @@ $('#nutrition-button').on('click', function (event) {
                 'Fat: ' + fat.toFixed(2) + 'g' + '<br>' +
                 'Carbs: ' + carbs.toFixed(2) + '%';
 
-        };
+        }
         // Send request.
         xhr.send();
 }

@@ -41,7 +41,7 @@ $('#recipe-button').on('click', function (event) {
         // Check for valid input. (400, 404)
         xhr.onreadystatechange = function() {
             // If complete.
-            if (xhr.readState === 4) {
+            if (xhr.readyState === 4) {
                 // If 'OK'.
                 if(xhr.status === 200) {
                     console.log('success');

@@ -51,7 +51,7 @@ body {
     font-size: 20px;
     font-family: 'Muli', sans-serif;
     background-color: #123C69;
-    
+      
 }
 
 .icon-img  {
@@ -92,4 +92,21 @@ body {
 
 #recipe-display {
     background-color: #EEE2DC;
+    opacity: 0.90;
 }
+
+#recipe-button, #nutrition-button {
+    background-color: #123C69;
+    float: right;
+}
+
+#output-info, #nutrition-info {
+    background-color: #EEE2DC;
+    opacity: 0.90;
+}
+
+#ingredients-nutri-facts {
+    padding: 10px;
+
+    
+} 

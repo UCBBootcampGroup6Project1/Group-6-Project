@@ -26,14 +26,27 @@ $('#recipe-button').on('click', function (event) {
     event.preventDefault();
     // Saves the user's in the ingrInput variable.
     const ingrInput = $('#ingredients-input').val().trim();
+    if (ingrInput == '') {
+        swal('Please input at least one food item.');
+    };
 
     // API url for making 'GET' request to find recipes.
     const recipeUrl = "https://api.edamam.com/search?q=" + ingrInput + "&app_id=44446b38&app_key=d47398d9c6d64bae4a20858ee13beadc";
     // Makes a 'GET' request to the API and returns data through an XMLHttpRequest
     function searchRecipe(){
+        // Empties the #display-recipe div every time a new search is made.
+        document.getElementById('display-recipe').innerHTML = '';
         // Request object.
         const xhr = new XMLHttpRequest();
-        //
+        xhr.onreadystatechange = function() {
+            if (xhr.readState === 4) {
+                if(xhr.status === 200) {
+                    swal('success');
+                } else {
+                    swal('Invalid input');
+                }
+            }
+        }
         console.log('UNSENT', xhr.status);
         // Initialize/reinitialize existing 'GET' request to the API.
         xhr.open('GET', recipeUrl, true);
@@ -80,12 +93,25 @@ $('#nutrition-button').on('click', function (event) {
     const nutrInput = $('#nutrition-input').val().trim();
     
     // API url for making 'GET' request for nutrition values.
-    const nutrUrl = "https://api.edamam.com/api/food-database/parser?ingr=" + nutrInput + "&app_id=181aca72&app_key=b7256710e96ed6771ca1936c304b7c88";
+    const nutrUrl = "https://api.edamam.com/api/food-database/parser?ingr=" + nutrInput + "&app_id=9e4c6c3d&app_key=8954976b9cc76c3cf1396f60f23e75ab";
 
     // Makes a 'GET' request to the API and returns data through an XMLHttpRequest.
     function getNutrition() {
         // Request object.
         const xhr = new XMLHttpRequest();
+        
+        // Check for bad request.
+        xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.readyState === 200) {
+                console.log('Successful API call.');
+            } 
+            else {
+                swal('Invalid input.');
+            }
+        }
+    }
+
         // Initialize/Reinitialize existing 'GET' request to the API.
         xhr.open('GET', nutrUrl, true);
         // Make requests with cookies/credentials

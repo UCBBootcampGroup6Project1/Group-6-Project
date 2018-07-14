@@ -106,7 +106,7 @@ $('#nutrition-button').on('click', function (event) {
         // If complete.
         if (xhr.readyState === 4) {
             // Check if 'OK'
-            if (xhr.readyState === 200) {
+            if (xhr.status === 200) {
                 console.log('Successful API call.');
             } 
             else {
